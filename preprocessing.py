@@ -1,12 +1,12 @@
 import os
 import pandas as pd
 
-# Step 1: Data Extraction
+# Data Extraction
 def extract_data(file_path):
     data = pd.read_csv(file_path, sep=",", header=None)
     return data
 
-# Step 2: Data Transformation
+# Data Transformation
 def transform_data(data):
     print(data.head())
     data.columns = ["timestamp", "heart_rate"]  # rename columns
@@ -14,7 +14,7 @@ def transform_data(data):
     data = data.drop_duplicates()  # remove duplicates
     return data
 
-# Step 3: Data Loading
+# Data Loading
 def load_data(data, file_path):
     data.to_csv(file_path, index=False)
 
